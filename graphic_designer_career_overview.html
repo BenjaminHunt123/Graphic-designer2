@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Designer | Career Profile & Industry Benchmarks</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        studio: {
+                            950: '#07090e',
+                            900: '#0f121d',
+                            800: '#181c2e',
+                            700: '#272d47',
+                            magenta: '#ec4899',
+                            cyan: '#06b6d4',
+                            purple: '#a855f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #07090e;
+            color: #f3f4f6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(236, 72, 153, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+        }
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 18, 29, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(236, 72, 153, 0.35);
+            box-shadow: 0 12px 35px -10px rgba(236, 72, 153, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            box-shadow: 0 0 30px -5px rgba(168, 85, 247, 0.25);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272d47;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec4899;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-slate-800/80 bg-studio-950/85 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Title Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-palette text-lg"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-white group-hover:text-pink-400 transition-colors">
+                        Graphic Designer<span class="text-pink-500">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium text-slate-300">
+                    <a href="#overview" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-compass text-xs opacity-70"></i> Overview
+                    </a>
+                    <a href="#skills" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs opacity-70"></i> Skills & Tools
+                    </a>
+                    <a href="#duties" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-layer-group text-xs opacity-70"></i> Core Duties
+                    </a>
+                    <a href="#pay" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-sterling-sign text-xs opacity-70"></i> Pay Benchmarks
+                    </a>
+                    <a href="#estimator" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-calculator text-xs opacity-70"></i> Quote Estimator
+                    </a>
+                </nav>
+
+                <!-- Actions / Share QR Button -->
+                <div class="flex items-center gap-3">
+                    <button id="qrOpenBtn" class="px-3.5 py-2 rounded-xl bg-studio-800 hover:bg-pink-900/40 text-slate-200 border border-slate-700/80 text-xs sm:text-sm font-medium flex items-center gap-2 transition-all hover:border-pink-500/50 shadow-sm" title="Open QR Code Generator">
+                        <i class="fa-solid fa-qrcode text-pink-400"></i>
+                        <span class="hidden sm:inline">QR Share</span>
+                    </button>
+                    
+                    <!-- Mobile Drawer Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-studio-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-studio-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#overview" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-studio-800 hover:text-pink-400">
+                <i class="fa-solid fa-compass mr-2 text-cyan-400"></i> Overview
+            </a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-studio-800 hover:text-pink-400">
+                <i class="fa-solid fa-wand-magic-sparkles mr-2 text-pink-400"></i> Skills & Tool Suite
+            </a>
+            <a href="#duties" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-studio-800 hover:text-pink-400">
+                <i class="fa-solid fa-layer-group mr-2 text-purple-400"></i> Core Duties
+            </a>
+            <a href="#pay" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-studio-800 hover:text-pink-400">
+                <i class="fa-solid fa-sterling-sign mr-2 text-amber-400"></i> Average Pay Rates
+            </a>
+            <a href="#estimator" class="mobile-link block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-studio-800 hover:text-pink-400">
+                <i class="fa-solid fa-calculator mr-2 text-emerald-400"></i> Project Cost Estimator
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="overview" class="relative pt-12 pb-20 overflow-hidden">
+            <!-- Background Glow Orbs -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-600/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-studio-800/90 border border-pink-500/30 text-xs sm:text-sm font-medium text-pink-300 mb-6 shadow-inner">
+                        <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Creative Industry Career & Standards Profile
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
+                        Graphic <span class="gradient-text">Designer</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-xl font-light leading-relaxed mb-8">
+                        Creative Visual Communicator & Brand Strategist transforming concepts into captivating digital, print, motion, and interactive brand experiences.
+                    </p>
+
+                    <!-- Action Badges -->
+                    <div class="flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
+                        <a href="#skills" class="px-4 py-2.5 rounded-xl glass-card text-slate-200 hover:text-pink-300 flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-layer-group text-pink-400"></i> Brand & Visual Identity
+                        </a>
+                        <a href="#pay" class="px-4 py-2.5 rounded-xl glass-card text-slate-200 hover:text-cyan-300 flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-sterling-sign text-cyan-400"></i> Salary & Freelance Benchmarks
+                        </a>
+                        <a href="#estimator" class="px-4 py-2.5 rounded-xl glass-card text-slate-200 hover:text-purple-300 flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-sliders text-purple-400"></i> Interactive Estimator
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Color Palette Design Preview Banner -->
+                <div class="mt-12 glass-card rounded-2xl p-4 sm:p-6 glow-effect border-pink-500/20 max-w-4xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-cyan-500 border-2 border-studio-900 shadow-md" title="Cyan #06b6d4"></div>
+                                <div class="w-8 h-8 rounded-full bg-purple-500 border-2 border-studio-900 shadow-md" title="Purple #a855f7"></div>
+                                <div class="w-8 h-8 rounded-full bg-pink-500 border-2 border-studio-900 shadow-md" title="Pink #ec4899"></div>
+                                <div class="w-8 h-8 rounded-full bg-amber-400 border-2 border-studio-900 shadow-md" title="Amber #f59e0b"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-white text-sm sm:text-base">Modern Design Stack & Workflow</h3>
+                                <p class="text-slate-400 text-xs">Vector graphics, UI design, motion, and print prepress mastery</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-md bg-studio-800 text-slate-300 text-xs border border-slate-700 font-mono">
+                                GitHub Pages Ready
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: SKILLS & QUALIFICATIONS -->
+        <section id="skills" class="py-16 bg-studio-900/50 border-t border-slate-800/80 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Section 01</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Skills & Qualifications</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Core competencies, software mastery, and industry-recognized academic qualifications.</p>
+                </div>
+
+                <!-- Core Design Skills Grid -->
+                <h3 class="text-lg font-heading font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-bezier-curve text-pink-400"></i> Core Graphic Design Competencies
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    
+                    <!-- Skill 1 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-5">
+                            <i class="fa-solid fa-shapes text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">Visual Identity & Branding</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Crafting memorable brand identities, logo marks, color systems, typography pairs, and comprehensive brand style guidelines for multi-platform consistency.
+                        </p>
+                        <span class="text-xs text-pink-300 bg-pink-950/60 px-2.5 py-1 rounded-md border border-pink-800/50">Logo design • Brand books</span>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5">
+                            <i class="fa-solid fa-font text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">Typography & Layout Design</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Deep mastery of typesetting, kerning, leading, hierarchy, baseline grids, and editorial layout systems for print magazines, books, and digital media.
+                        </p>
+                        <span class="text-xs text-purple-300 bg-purple-950/60 px-2.5 py-1 rounded-md border border-purple-800/50">Micro-typography • Grid systems</span>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+                            <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">UI/UX & Wireframing</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Designing user-centric digital interfaces, wireframes, interactive prototypes, design systems, and responsive website layouts tailored for conversion.
+                        </p>
+                        <span class="text-xs text-cyan-300 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/50">Component libraries • Prototyping</span>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5">
+                            <i class="fa-solid fa-film text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">Motion Graphics & Animation</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Bringing vector artwork and typography to life with smooth keyframe animation, title sequences, logo reveals, and social video assets.
+                        </p>
+                        <span class="text-xs text-amber-300 bg-amber-950/60 px-2.5 py-1 rounded-md border border-amber-800/50">Kinetic type • Logo animatics</span>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+                            <i class="fa-solid fa-print text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">Print & Prepress Packaging</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Expert knowledge of CMYK color spaces, bleed margins, spot varnish, dielines, foil stamping, paper stock selection, and print proof approval.
+                        </p>
+                        <span class="text-xs text-emerald-300 bg-emerald-950/60 px-2.5 py-1 rounded-md border border-emerald-800/50">CMYK / Pantone • Dielines</span>
+                    </div>
+
+                    <!-- Skill 6 -->
+                    <div class="glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-5">
+                            <i class="fa-solid fa-pen-nib text-xl"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-white mb-2">Vector Illustration & Art</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Creating scalable custom vector graphics, icons, character art, infographics, and promotional advertising creative from scratch.
+                        </p>
+                        <span class="text-xs text-rose-300 bg-rose-950/60 px-2.5 py-1 rounded-md border border-rose-800/50">Custom icons • SVG Artwork</span>
+                    </div>
+
+                </div>
+
+                <!-- Software Tool Suite & Qualifications Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Software Tool Suite -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8">
+                        <h3 class="text-xl font-heading font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-laptop-code text-pink-400"></i> Software & Tool Suite
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6">Industry standard software applications utilized for daily graphic production.</p>
+
+                        <div class="space-y-4">
+                            <!-- Software Item -->
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-studio-950 border border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xs">Ps</div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Adobe Photoshop</h5>
+                                        <p class="text-xs text-slate-400">Photo editing, raster graphics & compositing</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-indigo-400 font-medium">Master</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-studio-950 border border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold text-xs">Ai</div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Adobe Illustrator</h5>
+                                        <p class="text-xs text-slate-400">Vector artwork, branding & typography</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-amber-400 font-medium">Master</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-studio-950 border border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-pink-600/20 text-pink-400 flex items-center justify-center font-bold text-xs">Id</div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Adobe InDesign</h5>
+                                        <p class="text-xs text-slate-400">Editorial layout, print publishing & PDF forms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-pink-400 font-medium">Expert</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-studio-950 border border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold text-xs">Fg</div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">Figma & FigJam</h5>
+                                        <p class="text-xs text-slate-400">UI/UX wireframing, design systems & team collab</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-purple-400 font-medium">Expert</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-studio-950 border border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-lg bg-cyan-600/20 text-cyan-400 flex items-center justify-center font-bold text-xs">Ae</div>
+                                    <div>
+                                        <h5 class="text-sm font-semibold text-white">After Effects & Cinema 4D</h5>
+                                        <p class="text-xs text-slate-400">2D/3D Motion design & video rendering</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-cyan-400 font-medium">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qualifications & Certifications -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8">
+                        <h3 class="text-xl font-heading font-bold text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Qualifications & Certifications
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6">Formal academic credentials and recognized professional certifications.</p>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-studio-950 border border-slate-800 relative overflow-hidden">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">BA (Hons) Graphic Design</h5>
+                                        <p class="text-xs text-slate-400">Higher Education / Visual Communication</p>
+                                        <p class="text-xs text-slate-500 mt-1">Focus on typography, design history, and branding theory.</p>
+                                    </div>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-950 text-cyan-300 rounded border border-cyan-800">Degree</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-studio-950 border border-slate-800 relative overflow-hidden">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">Adobe Certified Professional (ACP)</h5>
+                                        <p class="text-xs text-slate-400">Visual Design Specialist Credentials</p>
+                                        <p class="text-xs text-slate-500 mt-1">Certified mastery in Photoshop, Illustrator & InDesign.</p>
+                                    </div>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-pink-950 text-pink-300 rounded border border-pink-800">Certified</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-studio-950 border border-slate-800 relative overflow-hidden">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">Google UX Design Certificate</h5>
+                                        <p class="text-xs text-slate-400">Professional Interactive Design Program</p>
+                                        <p class="text-xs text-slate-500 mt-1">Empathy mapping, user research, wireframing & usability testing.</p>
+                                    </div>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-purple-950 text-purple-300 rounded border border-purple-800">UX Spec</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-studio-950 border border-slate-800 relative overflow-hidden">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-white text-sm">Level 3 / 4 Diploma in Art & Design</h5>
+                                        <p class="text-xs text-slate-400">Foundation Studies in Visual Arts</p>
+                                    </div>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-slate-800 text-slate-300 rounded border border-slate-700">Diploma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CORE DUTIES -->
+        <section id="duties" class="py-16 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-cyan-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Section 02</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Core Duties & Workflow</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Essential responsibilities carried out from initial client brief through to final artwork delivery.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Duty 1 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">
+                                01
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Client Briefing & Discovery</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Analyzing creative briefs, establishing project scope, target demographic research, competitor audits, and clarifying key messaging goals.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-cyan-400"></i> Discovery & Requirements
+                        </div>
+                    </div>
+
+                    <!-- Duty 2 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm mb-4">
+                                02
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Concepting & Moodboarding</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Curating visual moodboards, sketching rough thumbnails, exploring typography combinations, and defining creative direction options.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-lightbulb text-purple-400"></i> Conceptual Exploration
+                        </div>
+                    </div>
+
+                    <!-- Duty 3 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-sm mb-4">
+                                03
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Brand Identity System Creation</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Vectorizing primary logo marks, sub-marks, iconography, color palettes, and compiling comprehensive brand style guideline books.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-book text-pink-400"></i> Style Guides & Systems
+                        </div>
+                    </div>
+
+                    <!-- Duty 4 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm mb-4">
+                                04
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Digital & Social Media Assets</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Designing high-converting digital ad banners, social media templates, email newsletters, and animated GIF/MP4 promotional graphics.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-share-nodes text-amber-400"></i> Marketing & Campaign Assets
+                        </div>
+                    </div>
+
+                    <!-- Duty 5 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">
+                                05
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Print Layout & Prepress</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Preparing press-ready PDFs with crop marks, bleeds, vector paths, CMYK color profiles, and approving printer proof copies.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-file-pdf text-emerald-400"></i> Press-Ready Packaging
+                        </div>
+                    </div>
+
+                    <!-- Duty 6 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-sm mb-4">
+                                06
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">UI/UX Wireframing & Prototype</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Constructing screen layouts in Figma, establishing interactive clickable prototypes, and handing off design tokens to developers.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-rose-400"></i> Web & App UI Handoff
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: AVERAGE PAY & RATES -->
+        <section id="pay" class="py-16 bg-studio-900/50 border-t border-slate-800/80 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-amber-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Section 03</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Average Pay & Salary Tiers</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Industry standard salary benchmarks and freelance day rates (UK Market context).</p>
+                </div>
+
+                <!-- Salary Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    
+                    <!-- Tier 1: Junior -->
+                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wide">Entry / Junior Level</span>
+                            <h3 class="font-heading text-2xl font-extrabold text-white mt-2 mb-1">£22k – £28k</h3>
+                            <p class="text-slate-400 text-xs mb-4">Per Annum (UK Avg)</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-slate-800/80 pt-3">
+                                0–2 years experience. Focuses on asset generation, resizing, formatting, following existing brand books under senior supervision.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] text-slate-400">
+                            Day rate: ~£120 – £180/day
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Mid-Level -->
+                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between border-pink-500/30">
+                        <div class="absolute top-0 right-0 bg-pink-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-bl-lg uppercase">Popular</div>
+                        <div>
+                            <span class="text-xs font-semibold text-pink-400 uppercase tracking-wide">Mid-Level Designer</span>
+                            <h3 class="font-heading text-2xl font-extrabold text-white mt-2 mb-1">£28k – £38k</h3>
+                            <p class="text-slate-400 text-xs mb-4">Per Annum (UK Avg)</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-slate-800/80 pt-3">
+                                2–5 years experience. Independently manages project briefs, client communications, branding initiatives, and complex print/web campaigns.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] text-slate-400">
+                            Day rate: ~£200 – £320/day
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Senior -->
+                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wide">Senior Designer</span>
+                            <h3 class="font-heading text-2xl font-extrabold text-white mt-2 mb-1">£38k – £52k</h3>
+                            <p class="text-slate-400 text-xs mb-4">Per Annum (UK Avg)</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-slate-800/80 pt-3">
+                                5+ years experience. Leads design strategy, presents to major clients, oversees junior designers, and manages design systems.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] text-slate-400">
+                            Day rate: ~£350 – £450/day
+                        </div>
+                    </div>
+
+                    <!-- Tier 4: Creative Director -->
+                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-amber-400 uppercase tracking-wide">Creative Director</span>
+                            <h3 class="font-heading text-2xl font-extrabold text-white mt-2 mb-1">£55k – £80k+</h3>
+                            <p class="text-slate-400 text-xs mb-4">Per Annum (Executive)</p>
+                            <p class="text-slate-300 text-xs leading-relaxed border-t border-slate-800/80 pt-3">
+                                Executive level agency or in-house lead. Oversees full studio direction, client retention, marketing vision, and team scaling.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 text-[11px] text-slate-400">
+                            Day rate: ~£500 – £800+/day
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 rounded-xl bg-studio-950 border border-slate-800 text-xs text-slate-400 text-center max-w-2xl mx-auto">
+                    <i class="fa-solid fa-circle-info text-pink-400 mr-1.5"></i>
+                    Note: London & Southeast UK rates typically carry a 15% – 25% regional premium compared to national averages.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE PROJECT ESTIMATOR -->
+        <section id="estimator" class="py-16 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Section 04</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Design Project Quote Estimator</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Select project scope deliverables to calculate an estimated turnaround time and cost quote.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border-pink-500/30 max-w-4xl mx-auto glow-effect">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        
+                        <!-- Controls Column -->
+                        <div class="lg:col-span-7 space-y-6">
+                            <h3 class="font-heading text-lg font-bold text-white mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check text-pink-400"></i> Select Deliverable Items
+                            </h3>
+
+                            <!-- Scope Item Checkboxes -->
+                            <div class="space-y-3">
+                                <label class="flex items-center justify-between p-3.5 rounded-xl bg-studio-950 border border-slate-800 hover:border-pink-500/40 cursor-pointer transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="project-item w-4 h-4 rounded text-pink-500 focus:ring-pink-500 bg-studio-900 border-slate-700" value="450" data-hours="12" data-title="Logo & Brand Identity Pack" checked>
+                                        <div>
+                                            <span class="text-sm font-semibold text-white block">Logo & Brand Identity Suite</span>
+                                            <span class="text-xs text-slate-400">Vector logos, brand guidelines book, color palette</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono font-bold text-pink-400">£450</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl bg-studio-950 border border-slate-800 hover:border-pink-500/40 cursor-pointer transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="project-item w-4 h-4 rounded text-pink-500 focus:ring-pink-500 bg-studio-900 border-slate-700" value="600" data-hours="16" data-title="UI/UX Web Design Layouts" checked>
+                                        <div>
+                                            <span class="text-sm font-semibold text-white block">UI/UX Web & Mobile Layouts</span>
+                                            <span class="text-xs text-slate-400">5-Page Figma prototype & component library</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono font-bold text-pink-400">£600</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl bg-studio-950 border border-slate-800 hover:border-pink-500/40 cursor-pointer transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="project-item w-4 h-4 rounded text-pink-500 focus:ring-pink-500 bg-studio-900 border-slate-700" value="280" data-hours="8" data-title="Print & Packaging Layout" data-price="280">
+                                        <div>
+                                            <span class="text-sm font-semibold text-white block">Print Marketing & Packaging Pack</span>
+                                            <span class="text-xs text-slate-400">Brochures, business cards, dieline layouts</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono font-bold text-pink-400">£280</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl bg-studio-950 border border-slate-800 hover:border-pink-500/40 cursor-pointer transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="project-item w-4 h-4 rounded text-pink-500 focus:ring-pink-500 bg-studio-900 border-slate-700" value="220" data-hours="6" data-title="Social Media Template Suite">
+                                        <div>
+                                            <span class="text-sm font-semibold text-white block">Social Media Content Suite</span>
+                                            <span class="text-xs text-slate-400">10 Editable Canva / Photoshop templates</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono font-bold text-pink-400">£220</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl bg-studio-950 border border-slate-800 hover:border-pink-500/40 cursor-pointer transition-all">
+                                    <div class="flex items-center gap-3">
+                                        <input type="checkbox" class="project-item w-4 h-4 rounded text-pink-500 focus:ring-pink-500 bg-studio-900 border-slate-700" value="380" data-hours="10" data-title="Motion Graphics Logo Reveal">
+                                        <div>
+                                            <span class="text-sm font-semibold text-white block">Motion Graphics & Animation</span>
+                                            <span class="text-xs text-slate-400">15-sec animated logo reveal & title cards</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono font-bold text-pink-400">£380</span>
+                                </label>
+                            </div>
+
+                            <!-- Options: Speed & Revisions -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-300 mb-1.5 block">Turnaround Speed</label>
+                                    <select id="turnaroundSpeed" class="w-full bg-studio-950 border border-slate-800 text-white text-xs rounded-xl p-3 focus:border-pink-500 focus:outline-none">
+                                        <option value="1.0">Standard (10-14 Business Days)</option>
+                                        <option value="1.25">Express Priority (+25% fee)</option>
+                                        <option value="1.5">Urgent / Rush (+50% fee)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="text-xs font-semibold text-slate-300 mb-1.5 block">Revision Rounds</label>
+                                    <select id="revisionRounds" class="w-full bg-studio-950 border border-slate-800 text-white text-xs rounded-xl p-3 focus:border-pink-500 focus:outline-none">
+                                        <option value="0">Standard 2 Revision Rounds</option>
+                                        <option value="100">Extended 4 Revision Rounds (+£100)</option>
+                                        <option value="200">Unlimited Iteration Rounds (+£200)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estimate Display Output -->
+                        <div class="lg:col-span-5 bg-studio-950 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                    <span class="text-xs font-semibold text-pink-400 uppercase tracking-wider">Quote Summary</span>
+                                    <i class="fa-solid fa-receipt text-slate-500"></i>
+                                </div>
+
+                                <div class="mt-6 space-y-4">
+                                    <div>
+                                        <span class="text-slate-400 text-xs block">Estimated Studio Hours</span>
+                                        <span id="estimatedHours" class="font-heading text-2xl font-bold text-white">28 Hours</span>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-slate-400 text-xs block">Total Project Estimate</span>
+                                        <span id="estimatedTotal" class="font-heading text-4xl font-black text-pink-400 mt-1 block">£1,050</span>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-studio-900 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+                                        Includes full commercial usage rights, source files (.AI, .PSD, .FIG), and final exported asset formats.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="copyQuoteBtn" class="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-copy"></i> Copy Quote Summary
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-studio-950 border-t border-slate-800/80 py-8 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+            <p class="font-medium text-slate-400">Graphic Designer Career Overview & Industry Standards Profile</p>
+            <p>Designed for deployment on <span class="text-pink-400 font-semibold">GitHub Pages</span>. Shareable via mobile QR code.</p>
+            <p class="pt-2 text-slate-600">&copy; <span id="yearSpan"></span> Graphic Designer Career Reference. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SECTION 5: BUILT-IN GITHUB PAGES QR CODE GENERATOR MODAL -->
+    <div id="qrModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card bg-studio-900 border-pink-500/40 rounded-2xl max-w-md w-full p-6 text-center relative shadow-2xl">
+            <button id="qrCloseBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center mx-auto mb-3">
+                <i class="fa-solid fa-qrcode text-xl"></i>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-white mb-1">GitHub Pages QR Generator</h3>
+            <p class="text-slate-400 text-xs mb-5">Enter your hosted GitHub Pages URL below to generate a mobile-scannable QR code.</p>
+
+            <!-- URL Input Box -->
+            <div class="mb-4 text-left">
+                <label for="qrUrlInput" class="text-xs font-semibold text-slate-300 mb-1 block">Hosted Web Address (URL)</label>
+                <input type="url" id="qrUrlInput" class="w-full bg-studio-950 border border-slate-700 text-white text-xs rounded-xl p-3 focus:border-pink-500 focus:outline-none font-mono" placeholder="https://username.github.io/portfolio/">
+            </div>
+
+            <!-- QR Code Render Container -->
+            <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4">
+                <div id="qrcode"></div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="copyUrlBtn" class="flex-1 py-2.5 rounded-xl bg-studio-800 hover:bg-studio-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-copy"></i> Copy Link
+                </button>
+                <button id="downloadQrBtn" class="flex-1 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-md">
+                    <i class="fa-solid fa-download"></i> Download QR
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-pink-600 text-white px-4 py-2.5 rounded-xl shadow-lg text-xs font-medium flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check"></i> <span id="toastMsg">Action completed successfully!</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set dynamic current year
+            document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // QR Code Generator Logic
+            const qrModal = document.getElementById('qrModal');
+            const qrOpenBtn = document.getElementById('qrOpenBtn');
+            const qrCloseBtn = document.getElementById('qrCloseBtn');
+            const qrUrlInput = document.getElementById('qrUrlInput');
+            const qrcodeContainer = document.getElementById('qrcode');
+            const downloadQrBtn = document.getElementById('downloadQrBtn');
+            let qrcodeObj = null;
+
+            function generateQRCode(url) {
+                if (!url) url = window.location.href;
+                qrcodeContainer.innerHTML = '';
+                
+                qrcodeObj = new QRCode(qrcodeContainer, {
+                    text: url,
+                    width: 170,
+                    height: 170,
+                    colorDark: "#07090e",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+
+            function openQRModal() {
+                const currentUrl = window.location.href;
+                qrUrlInput.value = currentUrl;
+                generateQRCode(currentUrl);
+                qrModal.classList.remove('hidden');
+            }
+
+            function closeQRModal() {
+                qrModal.classList.add('hidden');
+            }
+
+            qrOpenBtn.addEventListener('click', openQRModal);
+            qrCloseBtn.addEventListener('click', closeQRModal);
+            qrModal.addEventListener('click', (e) => {
+                if (e.target === qrModal) closeQRModal();
+            });
+
+            qrUrlInput.addEventListener('input', (e) => {
+                const val = e.target.value.trim();
+                generateQRCode(val || window.location.href);
+            });
+
+            // Copy Link Button
+            document.getElementById('copyUrlBtn').addEventListener('click', () => {
+                const textToCopy = qrUrlInput.value || window.location.href;
+                copyToClipboard(textToCopy);
+                showToast('URL copied to clipboard!');
+            });
+
+            // Download QR Image Button
+            downloadQrBtn.addEventListener('click', () => {
+                const img = qrcodeContainer.querySelector('img');
+                const canvas = qrcodeContainer.querySelector('canvas');
+                let imageSrc = '';
+
+                if (img && img.src) {
+                    imageSrc = img.src;
+                } else if (canvas) {
+                    imageSrc = canvas.toDataURL("image/png");
+                }
+
+                if (imageSrc) {
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = imageSrc;
+                    downloadLink.download = 'graphic-designer-portfolio-qr.png';
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    showToast('QR Code image downloaded!');
+                } else {
+                    showToast('Unable to generate image download.');
+                }
+            });
+
+            // Interactive Project Estimator
+            const checkboxes = document.querySelectorAll('.project-item');
+            const turnaroundSpeed = document.getElementById('turnaroundSpeed');
+            const revisionRounds = document.getElementById('revisionRounds');
+            const estimatedHoursEl = document.getElementById('estimatedHours');
+            const estimatedTotalEl = document.getElementById('estimatedTotal');
+            const copyQuoteBtn = document.getElementById('copyQuoteBtn');
+
+            function calculateEstimate() {
+                let basePrice = 0;
+                let baseHours = 0;
+
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        basePrice += parseFloat(cb.value);
+                        baseHours += parseInt(cb.getAttribute('data-hours'), 10);
+                    }
+                });
+
+                const speedMultiplier = parseFloat(turnaroundSpeed.value);
+                const extraRevisionFee = parseFloat(revisionRounds.value);
+
+                const finalTotal = (basePrice * speedMultiplier) + extraRevisionFee;
+                const finalHours = Math.round(baseHours * (speedMultiplier > 1 ? 0.9 : 1.0)); // Priority efficiency factor
+
+                estimatedHoursEl.textContent = `${finalHours} Hours`;
+                estimatedTotalEl.textContent = `£${Math.round(finalTotal).toLocaleString('en-GB')}`;
+            }
+
+            checkboxes.forEach(cb => cb.addEventListener('change', calculateEstimate));
+            turnaroundSpeed.addEventListener('change', calculateEstimate);
+            revisionRounds.addEventListener('change', calculateEstimate);
+
+            // Initial Calculation
+            calculateEstimate();
+
+            // Copy Quote Summary
+            copyQuoteBtn.addEventListener('click', () => {
+                const selectedItems = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => `- ${cb.getAttribute('data-title')}`)
+                    .join('\n');
+
+                const summaryText = `Graphic Design Project Estimate:\n\nDeliverables:\n${selectedItems}\n\nEstimated Hours: ${estimatedHoursEl.textContent}\nTotal Estimate: ${estimatedTotalEl.textContent}`;
+                
+                copyToClipboard(summaryText);
+                showToast('Quote summary copied to clipboard!');
+            });
+
+            // Helper: Clipboard Copy
+            function copyToClipboard(text) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            // Helper: Toast Message
+            function showToast(msg) {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toastMsg');
+                toastMsg.textContent = msg;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 2500);
+            }
+        });
+    </script>
+</body>
+</html>
